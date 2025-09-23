@@ -12,5 +12,12 @@ extension Deque {
         
         @usableFromInline
         internal let endIndex: Int
+        
+        @inlinable
+        internal init(capacity: Int) {
+            self.capacity = capacity
+            self.startIndex = 0
+            self.endIndex = 0
+        }
     }
 }
