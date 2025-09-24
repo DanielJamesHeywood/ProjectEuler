@@ -20,5 +20,19 @@ extension Deque {
             self._startIndex = 0
             self._endIndex = 0
         }
+        
+        @inlinable
+        internal var startIndex: Int {
+            get {
+                return _startIndex
+            }
+        }
+        
+        @inlinable
+        internal var endIndex: Int {
+            get {
+                return _endIndex
+            }
+        }
     }
 }
