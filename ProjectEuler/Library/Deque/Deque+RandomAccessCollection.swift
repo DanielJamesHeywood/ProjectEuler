@@ -7,6 +7,7 @@ extension Deque: RandomAccessCollection {
     public subscript(position: Int) -> Element {
         return _buffer.withUnsafeMutablePointers { pointerToHeader, pointerToElements in
             let header = pointerToHeader.pointee
+            precondition(position >= 0 && position < header.count)
             return pointerToElements[(header.startIndex + position) % header.capacity]
         }
     }
@@ -25,11 +26,15 @@ extension Deque: RandomAccessCollection {
     
     @inlinable
     public func index(before index: Int) -> Int {
-        return index - 1
+        let newIndex = index - 1
+        precondition(newIndex >= startIndex)
+        return newIndex
     }
     
     @inlinable
     public func index(after index: Int) -> Int {
-        return index + 1
+        let newIndex = index + 1
+        precondition(newIndex <= endIndex)
+        return newIndex
     }
 }
