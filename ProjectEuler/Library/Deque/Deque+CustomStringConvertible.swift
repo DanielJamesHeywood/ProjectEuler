@@ -1,10 +1,11 @@
 
-extension Deque: Hashable where Element: Hashable {
+extension Deque: CustomStringConvertible {
     
     @inlinable
-    public func hash(into hasher: inout Hasher) {
-        for element in self {
-            hasher.combine(element)
+    public var description: String {
+        let elementDescriptions = map { element in
+            return String(reflecting: element)
         }
+        return "[\(elementDescriptions.joined(separator: ", "))]"
     }
 }
