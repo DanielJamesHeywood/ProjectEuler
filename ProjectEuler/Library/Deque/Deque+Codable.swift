@@ -7,3 +7,11 @@ extension Deque: Encodable where Element: Encodable {
         try container.encode(contentsOf: self)
     }
 }
+
+extension Deque: Decodable where Element: Decodable {
+    
+    @inlinable
+    public init(from decoder: any Decoder) throws {
+        fatalError()
+    }
+}
