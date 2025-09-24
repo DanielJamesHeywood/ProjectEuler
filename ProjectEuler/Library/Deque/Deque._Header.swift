@@ -15,7 +15,7 @@ extension Deque {
         
         @inlinable
         internal init(capacity: Int) {
-            precondition(capacity > 0)
+            precondition(capacity >= 1)
             self.capacity = capacity
             self._startIndex = 0
             self._count = 0
