@@ -9,3 +9,11 @@ extension Deque: CustomStringConvertible {
         return "[\(elementDescriptions.joined(separator: ", "))]"
     }
 }
+
+extension Deque: CustomDebugStringConvertible {
+    
+    @inlinable
+    public var debugDescription: String {
+        return "Deque(\(self))"
+    }
+}
