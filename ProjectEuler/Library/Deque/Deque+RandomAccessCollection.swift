@@ -5,27 +5,21 @@ extension Deque: RandomAccessCollection {
     
     @inlinable
     public subscript(position: Int) -> Element {
-        get {
-            return _buffer.withUnsafeMutablePointers { pointerToHeader, pointerToElements in
-                let header = pointerToHeader.pointee
-                return pointerToElements[(header.startIndex + position) % header.capacity]
-            }
+        return _buffer.withUnsafeMutablePointers { pointerToHeader, pointerToElements in
+            let header = pointerToHeader.pointee
+            return pointerToElements[(header.startIndex + position) % header.capacity]
         }
     }
     
     @inlinable
     public var startIndex: Int {
-        get {
-            return 0
-        }
+        return 0
     }
     
     @inlinable
     public var endIndex: Int {
-        get {
-            return _buffer.withUnsafeMutablePointerToHeader { pointer in
-                return pointer.pointee.count
-            }
+        return _buffer.withUnsafeMutablePointerToHeader { pointer in
+            return pointer.pointee.count
         }
     }
     

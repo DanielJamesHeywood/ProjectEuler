@@ -23,23 +23,17 @@ extension Deque {
         
         @inlinable
         internal var startIndex: Int {
-            get {
-                return _startIndex
-            }
+            return _startIndex
         }
         
         @inlinable
         internal var endIndex: Int {
-            get {
-                return (_startIndex + _count) % capacity
-            }
+            return (_startIndex + _count) % capacity
         }
         
         @inlinable
         internal var count: Int {
-            get {
-                return _count
-            }
+            return _count
         }
     }
 }
