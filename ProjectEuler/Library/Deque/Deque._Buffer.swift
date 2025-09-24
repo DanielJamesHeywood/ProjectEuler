@@ -2,5 +2,9 @@
 extension Deque {
     
     @usableFromInline
-    internal class _Buffer: ManagedBuffer<_Header, Element> {}
+    internal class _Buffer: ManagedBuffer<_Header, Element> {
+        
+        @inlinable
+        deinit {}
+    }
 }
