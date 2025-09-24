@@ -7,7 +7,7 @@ extension Deque: RandomAccessCollection {
     public subscript(position: Int) -> Element {
         return _buffer.withUnsafeMutablePointers { pointerToHeader, pointerToElements in
             let header = pointerToHeader.pointee
-            precondition(position >= 0 && position < header.count)
+            precondition(0..<header.count ~= position)
             return pointerToElements[(header.startIndex + position) % header.capacity]
         }
     }
