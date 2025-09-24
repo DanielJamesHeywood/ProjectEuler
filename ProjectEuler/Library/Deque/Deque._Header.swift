@@ -11,14 +11,14 @@ extension Deque {
         internal var _startIndex: Int
         
         @usableFromInline
-        internal var _endIndex: Int
+        internal var _count: Int
         
         @inlinable
         internal init(capacity: Int) {
             precondition(capacity >= 0)
             self.capacity = capacity
             self._startIndex = 0
-            self._endIndex = 0
+            self._count = 0
         }
         
         @inlinable
@@ -31,7 +31,14 @@ extension Deque {
         @inlinable
         internal var endIndex: Int {
             get {
-                return _endIndex
+                return (_startIndex + _count) % capacity
+            }
+        }
+        
+        @inlinable
+        internal var count: Int {
+            get {
+                return _count
             }
         }
     }
