@@ -43,3 +43,28 @@ extension Deque {
         }
     }
 }
+
+extension Deque._Header {
+    
+    @inlinable
+    internal mutating func incrementStartIndex() {
+        _startIndex = (_startIndex + 1) % capacity
+        _count -= 1
+    }
+    
+    @inlinable
+    internal mutating func decrementStartIndex() {
+        _startIndex = (_startIndex + (capacity - 1)) % capacity
+        _count += 1
+    }
+    
+    @inlinable
+    internal mutating func incrementEndIndex() {
+        _count += 1
+    }
+    
+    @inlinable
+    internal mutating func decrementEndIndex() {
+        _count -= 1
+    }
+}
