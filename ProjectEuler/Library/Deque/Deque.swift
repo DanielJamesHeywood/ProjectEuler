@@ -2,5 +2,5 @@
 public struct Deque<Element> {
     
     @usableFromInline
-    internal let _buffer: _Buffer
+    internal var _buffer: _Buffer
 }
