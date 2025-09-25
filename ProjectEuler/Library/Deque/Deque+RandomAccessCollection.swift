@@ -1,5 +1,5 @@
 
-extension Deque: RandomAccessCollection, MutableCollection {
+extension Deque: RandomAccessCollection, MutableCollection, RangeReplaceableCollection {
     
     public typealias Index = Int
     
@@ -53,5 +53,18 @@ extension Deque: RandomAccessCollection, MutableCollection {
     public func formIndex(after index: inout Int) {
         precondition(startIndex..<endIndex ~= index)
         index += 1
+    }
+    
+    @inlinable
+    public init() {
+        fatalError()
+    }
+    
+    @inlinable
+    public mutating func replaceSubrange<C: Collection>(
+        _ subrange: Range<Int>,
+        with newElements: C
+    ) where C.Element == Element {
+        fatalError()
     }
 }
