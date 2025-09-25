@@ -1,19 +1,14 @@
 
-extension Deque: RandomAccessCollection, MutableCollection {
+extension Deque: RandomAccessCollection {
     
     public typealias Index = Int
     
     @inlinable
     public subscript(position: Int) -> Element {
-        get {
-            return _buffer.withUnsafeMutablePointers { pointerToHeader, pointerToElements in
-                let header = pointerToHeader.pointee
-                precondition(0..<header.count ~= position)
-                return pointerToElements[(header.startIndex + position) % header.capacity]
-            }
-        }
-        set(newElement) {
-            fatalError()
+        return _buffer.withUnsafeMutablePointers { pointerToHeader, pointerToElements in
+            let header = pointerToHeader.pointee
+            precondition(0..<header.count ~= position)
+            return pointerToElements[(header.startIndex + position) % header.capacity]
         }
     }
     
