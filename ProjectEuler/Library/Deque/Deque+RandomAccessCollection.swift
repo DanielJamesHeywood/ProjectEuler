@@ -34,7 +34,7 @@ extension Deque: RandomAccessCollection {
     @inlinable
     public func formIndex(before index: inout Int) {
         index -= 1
-        precondition(index >= startIndex)
+        precondition(startIndex..<endIndex ~= index)
     }
     
     @inlinable
@@ -46,7 +46,7 @@ extension Deque: RandomAccessCollection {
     
     @inlinable
     public func formIndex(after index: inout Int) {
+        precondition(startIndex..<endIndex ~= index)
         index += 1
-        precondition(index <= endIndex)
     }
 }
