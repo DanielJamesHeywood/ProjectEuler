@@ -5,6 +5,6 @@ extension Deque: ExpressibleByArrayLiteral {
     
     @inlinable
     public init(arrayLiteral elements: Element...) {
-        fatalError()
+        self.init(elements)
     }
 }
