@@ -12,6 +12,10 @@ extension Deque: Decodable where Element: Decodable {
     
     @inlinable
     public init(from decoder: any Decoder) throws {
-        fatalError()
+        self.init()
+        var container = try decoder.unkeyedContainer()
+        while !container.isAtEnd {
+            self.append(try container.decode(Element.self))
+        }
     }
 }
