@@ -26,8 +26,8 @@ extension Deque: RandomAccessCollection {
     
     @inlinable
     public func index(before index: Int) -> Int {
-        let newIndex = index - 1
-        precondition(newIndex >= startIndex)
+        var newIndex = index
+        formIndex(before: &newIndex)
         return newIndex
     }
     
@@ -39,8 +39,8 @@ extension Deque: RandomAccessCollection {
     
     @inlinable
     public func index(after index: Int) -> Int {
-        let newIndex = index + 1
-        precondition(newIndex <= endIndex)
+        var newIndex = index
+        formIndex(after: &newIndex)
         return newIndex
     }
     
