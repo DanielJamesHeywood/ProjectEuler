@@ -13,6 +13,10 @@ extension Deque {
         }
         
         @inlinable
-        deinit {}
+        deinit {
+            withUnsafeMutablePointers { pointerToHeader, pointerToElements in
+                fatalError()
+            }
+        }
     }
 }
