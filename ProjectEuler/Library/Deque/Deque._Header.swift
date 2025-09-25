@@ -8,7 +8,7 @@ extension Deque {
         internal let capacity: Int
         
         @usableFromInline
-        internal var _startIndex: Int
+        internal var _offset: Int
         
         @usableFromInline
         internal var _count: Int
@@ -17,52 +17,30 @@ extension Deque {
         internal init(capacity: Int) {
             precondition(capacity >= 1)
             self.capacity = capacity
-            self._startIndex = 0
+            self._offset = 0
             self._count = 0
         }
         
         @inlinable
-        internal var startIndex: Int {
-            return _startIndex
-        }
-        
-        @inlinable
-        internal var endIndex: Int {
-            return (_startIndex + _count) % capacity
+        internal var offset: Int {
+            get {
+                return _offset
+            }
+            set(newOffset) {
+                precondition(0..<capacity ~= newOffset)
+                _offset = newOffset
+            }
         }
         
         @inlinable
         internal var count: Int {
-            return _count
+            get {
+                return _count
+            }
+            set(newCount) {
+                precondition(0...capacity ~= newCount)
+                _count = newCount
+            }
         }
-    }
-}
-
-extension Deque._Header {
-    
-    @inlinable
-    internal mutating func incrementStartIndex() {
-        _startIndex = (_startIndex + 1) % capacity
-        _count -= 1
-        precondition(_count >= 0)
-    }
-    
-    @inlinable
-    internal mutating func decrementStartIndex() {
-        _startIndex = (_startIndex + (capacity - 1)) % capacity
-        _count += 1
-        precondition(_count <= capacity)
-    }
-    
-    @inlinable
-    internal mutating func incrementEndIndex() {
-        _count += 1
-        precondition(_count <= capacity)
-    }
-    
-    @inlinable
-    internal mutating func decrementEndIndex() {
-        _count -= 1
-        precondition(_count >= 0)
     }
 }

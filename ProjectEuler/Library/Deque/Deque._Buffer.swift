@@ -16,11 +16,11 @@ extension Deque {
         deinit {
             withUnsafeMutablePointers { pointerToHeader, pointerToElements in
                 let header = pointerToHeader.pointee
-                if header.startIndex + header.count <= header.capacity {
-                    pointerToElements.advanced(by: header.startIndex).deinitialize(count: header.count)
+                if header.offset + header.count <= header.capacity {
+                    pointerToElements.advanced(by: header.offset).deinitialize(count: header.count)
                 } else {
-                    let count = header.capacity - header.startIndex
-                    pointerToElements.advanced(by: header.startIndex).deinitialize(count: count)
+                    let count = header.capacity - header.offset
+                    pointerToElements.advanced(by: header.offset).deinitialize(count: count)
                     pointerToElements.deinitialize(count: header.count - count)
                 }
             }
