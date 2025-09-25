@@ -15,7 +15,14 @@ extension Deque {
         @inlinable
         deinit {
             withUnsafeMutablePointers { pointerToHeader, pointerToElements in
-                fatalError()
+                let header = pointerToHeader.pointee
+                if header.startIndex + header.count <= header.capacity {
+                    pointerToElements.advanced(by: header.startIndex).deinitialize(count: header.count)
+                } else {
+                    let count = header.capacity - header.startIndex
+                    pointerToElements.advanced(by: header.startIndex).deinitialize(count: count)
+                    pointerToElements.deinitialize(count: header.count - count)
+                }
             }
         }
     }
