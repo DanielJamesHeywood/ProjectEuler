@@ -21,9 +21,7 @@ extension Deque {
         
         @inlinable
         internal var offset: Int {
-            get {
-                return _offset
-            }
+            get { _offset }
             set(newOffset) {
                 precondition(0..<capacity ~= newOffset)
                 _offset = newOffset
@@ -32,9 +30,7 @@ extension Deque {
         
         @inlinable
         internal var count: Int {
-            get {
-                return _count
-            }
+            get { _count }
             set(newCount) {
                 precondition(0...capacity ~= newCount)
                 _count = newCount
