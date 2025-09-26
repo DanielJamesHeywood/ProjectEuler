@@ -8,17 +8,15 @@ extension Deque {
         internal let capacity: Int
         
         @usableFromInline
-        internal var _offset: Int
+        internal var _offset = 0
         
         @usableFromInline
-        internal var _count: Int
+        internal var _count = 0
         
         @inlinable
         internal init(capacity: Int) {
             precondition(capacity >= 1)
             self.capacity = capacity
-            self._offset = 0
-            self._count = 0
         }
         
         @inlinable
