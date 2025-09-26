@@ -2,7 +2,7 @@
 extension Deque {
     
     @usableFromInline
-    internal class _Buffer: ManagedBuffer<_Header, Element> {
+    internal final class _Buffer: ManagedBuffer<_Header, Element> {
         
         @inlinable
         internal static func create(minimumCapacity: Int) -> _Buffer {
