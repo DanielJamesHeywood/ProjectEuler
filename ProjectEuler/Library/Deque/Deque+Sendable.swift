@@ -1,2 +1,2 @@
 
-extension Deque: @unchecked Sendable {}
+extension Deque: @unchecked Sendable where Element: Sendable {}
