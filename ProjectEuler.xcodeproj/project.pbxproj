@@ -6,8 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		657E6A0F2E874D8600841B2B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 657E6A0E2E874D8600841B2B /* README.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		6564204F2E833BAD00E66EE6 /* ProjectEuler.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectEuler.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		657E6A0E2E874D8600841B2B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -40,6 +45,7 @@
 		65D7FF2D2E8339C000EC31C3 = {
 			isa = PBXGroup;
 			children = (
+				657E6A0E2E874D8600841B2B /* README.md */,
 				656420512E833BAD00E66EE6 /* ProjectEuler */,
 				656420502E833BAD00E66EE6 /* Products */,
 			);
@@ -110,6 +116,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				657E6A0F2E874D8600841B2B /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
