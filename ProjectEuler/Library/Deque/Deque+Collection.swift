@@ -57,7 +57,7 @@ extension Deque: RandomAccessCollection, MutableCollection, RangeReplaceableColl
     
     @inlinable
     public init() {
-        self._buffer = .create(minimumCapacity: 1)
+        self.init(minimumCapacity: 1)
     }
     
     @inlinable
