@@ -14,7 +14,7 @@ extension Deque {
         
         @inlinable
         deinit {
-            withUnsafeMutablePointers { pointerToHeader, pointerToElements in
+            self.withUnsafeMutablePointers { pointerToHeader, pointerToElements in
                 let header = pointerToHeader.pointee
                 if header.offset + header.count <= header.capacity {
                     pointerToElements.advanced(by: header.offset).deinitialize(count: header.count)
