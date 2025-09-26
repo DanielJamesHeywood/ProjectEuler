@@ -13,11 +13,7 @@ extension Deque: Decodable where Element: Decodable {
     @inlinable
     public init(from decoder: any Decoder) throws {
         var container = try decoder.unkeyedContainer()
-        if let count = container.count {
-            self.init(minimumCapacity: count)
-        } else {
-            self.init()
-        }
+        self.init(minimumCapacity: container.count ?? 1)
         while !container.isAtEnd {
             self.append(try container.decode(Element.self))
         }
