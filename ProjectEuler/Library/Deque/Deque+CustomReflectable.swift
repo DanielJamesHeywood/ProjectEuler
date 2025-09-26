@@ -2,7 +2,5 @@
 extension Deque: CustomReflectable {
     
     @inlinable
-    public var customMirror: Mirror {
-        return Mirror(self, unlabeledChildren: self, displayStyle: .collection)
-    }
+    public var customMirror: Mirror { Mirror(self, unlabeledChildren: self, displayStyle: .collection) }
 }
