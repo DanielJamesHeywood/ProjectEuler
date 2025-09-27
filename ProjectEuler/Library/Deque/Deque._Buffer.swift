@@ -6,6 +6,10 @@ extension Deque {
         
         @inlinable
         internal static func create(minimumCapacity: Int) -> _Buffer {
+            precondition(minimumCapacity >= 0)
+            guard minimumCapacity != 0 else {
+                return .create(minimumCapacity: 1)
+            }
             let buffer = _Buffer.create(minimumCapacity: minimumCapacity) { buffer in
                 return _Header(capacity: buffer.capacity)
             }
