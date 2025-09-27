@@ -1,5 +1,5 @@
 
-extension Deque: RandomAccessCollection, MutableCollection, RangeReplaceableCollection {
+extension Deque: RandomAccessCollection, MutableCollection {
     
     public typealias Index = Int
     
@@ -54,6 +54,9 @@ extension Deque: RandomAccessCollection, MutableCollection, RangeReplaceableColl
         precondition(startIndex..<endIndex ~= index)
         index += 1
     }
+}
+
+extension Deque: RangeReplaceableCollection {
     
     @inlinable
     public init() {
