@@ -47,6 +47,7 @@ extension Deque._Storage {
     
     @inlinable
     internal func _unsafeMutablePointerToElement(at i: Int) -> UnsafeMutablePointer<Element> {
+        precondition(i >= 0 && i < _count)
         return _pointerToElements + (_offset + i) % _capacity
     }
 }
