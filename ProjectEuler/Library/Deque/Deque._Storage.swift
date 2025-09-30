@@ -5,13 +5,13 @@ extension Deque {
     internal final class _Storage {
         
         @usableFromInline
-        internal var _capacity: Int
-        
-        @usableFromInline
         internal var _offset = 0
         
         @usableFromInline
         internal var _count = 0
+        
+        @usableFromInline
+        internal var _capacity: Int
         
         @usableFromInline
         internal var _pointerToElements: UnsafeMutablePointer<Element>
