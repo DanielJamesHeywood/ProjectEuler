@@ -4,4 +4,6 @@
 
 ### Deque
 
+### Integer
+
 ## Problems
