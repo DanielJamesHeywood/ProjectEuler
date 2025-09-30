@@ -17,7 +17,8 @@ extension Deque {
         internal var _pointerToElements: UnsafeMutablePointer<Element>
         
         @inlinable
-        internal init(capacity: Int) {
+        internal init(minimumCapacity: Int) {
+            let capacity = max(minimumCapacity, 0)
             _capacity = capacity
             _pointerToElements = .allocate(capacity: capacity)
         }
