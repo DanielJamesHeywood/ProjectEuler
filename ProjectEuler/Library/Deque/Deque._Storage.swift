@@ -40,6 +40,9 @@ extension Deque {
 extension Deque._Storage {
     
     @inlinable
+    internal subscript(position: Int) -> Element { _unsafeMutablePointerToElement(at: position).pointee }
+    
+    @inlinable
     internal var count: Int { _count }
 }
 
