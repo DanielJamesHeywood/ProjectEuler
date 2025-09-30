@@ -11,9 +11,33 @@
 		65766D962E8C5C5D0074006C /* ProjectEuler.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectEuler.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		653CF03E2E8C7A5D00FBF069 /* Exceptions for "ProjectEuler" folder in "ProjectEuler" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"Library/Deque/Deque.Iterator/Deque.Iterator+Sendable.swift",
+			);
+			target = 65766D952E8C5C5D0074006C /* ProjectEuler */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		653CF03F2E8C7A5D00FBF069 /* Exceptions for "ProjectEuler" folder in "Copy Bundle Resources" phase from "ProjectEuler" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = 65766D942E8C5C5D0074006C /* Resources */;
+			membershipExceptions = (
+				"Library/Deque/Deque.Iterator/Deque.Iterator+Sendable.swift",
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		65766D982E8C5C5D0074006C /* ProjectEuler */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				653CF03E2E8C7A5D00FBF069 /* Exceptions for "ProjectEuler" folder in "ProjectEuler" target */,
+				653CF03F2E8C7A5D00FBF069 /* Exceptions for "ProjectEuler" folder in "Copy Bundle Resources" phase from "ProjectEuler" target */,
+			);
 			path = ProjectEuler;
 			sourceTree = "<group>";
 		};
