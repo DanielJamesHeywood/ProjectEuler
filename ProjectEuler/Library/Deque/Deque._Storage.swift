@@ -36,3 +36,11 @@ extension Deque {
         }
     }
 }
+
+extension Deque._Storage {
+    
+    @inlinable
+    public var count: Int {
+        return _count
+    }
+}
