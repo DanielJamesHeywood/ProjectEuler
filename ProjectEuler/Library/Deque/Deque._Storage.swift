@@ -40,5 +40,5 @@ extension Deque {
 extension Deque._Storage {
     
     @inlinable
-    public var count: Int { _count }
+    internal var count: Int { _count }
 }
