@@ -10,6 +10,6 @@ public struct Deque<Element> {
     /// - Parameter minimumCapacity: The minimum number of elements that the newly created deque should be able to store without reallocating its storage.
     @inlinable
     public init(minimumCapacity: Int) {
-        _storage = _Storage(capacity: minimumCapacity)
+        _storage = _Storage(minimumCapacity: minimumCapacity)
     }
 }
